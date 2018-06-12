@@ -9,8 +9,8 @@ googleplus_username: google
 head-title: 吸烟有害健康
 title: 蚍蜉撼大树，可敬不自量
 
-baseurl: "/materialize-jekyll"    # the subpath of your site, "/blog"
-url: ""
+baseurl: "/blog"    # the subpath of your site, "/blog"
+url: "https://longweitao.github.io/"
 
 # footer 
 description: "Every day will come up with many ideas, those who do not die is called dream."
