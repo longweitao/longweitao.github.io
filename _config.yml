@@ -9,7 +9,7 @@ googleplus_username: google
 head-title: 吸烟有害健康
 title: 蚍蜉撼大树，可敬不自量
 
-baseurl: ""    # the subpath of your site, "/blog"
+baseurl: "/materialize-jekyll"    # the subpath of your site, "/blog"
 url: ""
 
 # footer 
