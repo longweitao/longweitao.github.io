@@ -1,22 +1,22 @@
 # Site settings
 
-author: Yourname
-email: example@email.com
+author: vincent
+email: Vincent.long@centling.com
 twitter_username: twitter
 github_username:  github
 googleplus_username: google
 
-head-title: Your blog
-title: Your blog
+head-title: 吸烟有害健康
+title: 蚍蜉撼大树，可敬不自量
 
-baseurl: "/longweitao.io"    # the subpath of your site, "/blog"
+baseurl: ""    # the subpath of your site, "/blog"
 url: ""
 
 # footer 
-description: "I know that what I'm doing looks stupid, but I'm a big boy and really want to do this."
+description: "Every day will come up with many ideas, those who do not die is called dream."
 
-favo: "春梦随云散，飞花逐水流"
-descrpt: "“巧者劳而智者忧，无能者无所求，饱食而遨游，泛若不系之舟”  ——《南华经》"
+favo: "待到秋来九月八，我花开后百花杀"
+descrpt: "“路漫漫其修远兮,吾将上下而求索”  ——战国.屈原.《离骚》 "
 
 
 #
