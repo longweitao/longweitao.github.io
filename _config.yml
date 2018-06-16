@@ -3,14 +3,14 @@ title: 龙威陶
 subtitle: 个人站
 description: 欢迎来到我的个人站~
 # 头像里面的标题
-avatarTitle: vincent.Dargon
+avatarTitle: vincent.long
 # 头像里面的描述
 avatarDesc: Android / 混子
 url: "http://longweitao.io"
 
 # Comment
 comment:
-    disqus: leopard
+    disqus: vicnet
     # uyan: 2143225  # 有言id,登录有言官网申请
 
 # Social
