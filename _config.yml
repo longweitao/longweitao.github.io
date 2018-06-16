@@ -11,14 +11,14 @@ url: "http://longweitao.io"
 # Comment
 comment:
     disqus: vicnet
-    # uyan: 2143225  # 有言id,登录有言官网申请
+    # uyan:   # 有言id,登录有言官网申请
 
 # Social
 social:
-    weibo: 5366874726 
+    weibo:  
     github: @vincent
     # twitter: 
-    mail: leopardpan@icloud.com
+    mail: 
 
 # 百度统计 
 # 使用博客模板请去掉或者更换 id 
