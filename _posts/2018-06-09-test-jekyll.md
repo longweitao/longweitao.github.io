@@ -6,3 +6,5 @@ categories: original
 ---
 
 Don't say anything, just say it in English！
+
+test update in mac 
