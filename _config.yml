@@ -1,11 +1,11 @@
 # Basic
 title: 龙威陶
-subtitle: 私塾
+subtitle: I'm ok
 description: Welcom~
 # 头像里面的标题
-avatarTitle: vincent.long
+avatarTitle: vincent
 # 头像里面的描述
-avatarDesc: Androird/混子
+avatarDesc: Androird
 url: "http://longweitao.io"
 
 # Comment
@@ -57,8 +57,7 @@ blog_button:
 
 # Navigation buttons in the front page.s
 nav:
-    - {title: 所有文章, description: archive, url: '/archive'}   
-    - {title: 标签, description: tags, url: '/tags'}      
+    - {title: 所有文章, description: archive, url: '/archive'}       
     - {title: 关于我, description: about, url: '/about'}      
     
 
