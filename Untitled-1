@@ -1,0 +1,117 @@
+package com.centling.scene.util
+
+import android.content.Context
+import android.graphics.Canvas
+import android.graphics.Paint
+import android.graphics.Rect
+import android.util.AttributeSet
+import android.util.Log
+import android.view.MotionEvent
+import android.view.View
+import com.centling.scene.R
+import pers.victor.ext.dp2px
+
+
+/**
+ * Created by vincent.long on 2018/8/21. (ง •̀_•́)ง
+ */
+class PickView2(context: Context, attrs: AttributeSet) : View(context, attrs) {
+
+    private var mWidth = 0
+    private var mHeight = 0
+    private var textHeight = 0f
+    private var textWidth = 0f
+    private var textPadding = 10
+    private lateinit var textPaint: Paint
+    var unitBaseLine = 0f
+
+    private var rectLeft = 0
+    private var rectTop = 0
+    private var rectRight = 0
+    private var rectBottom = 0
+    private var isMove = false
+    private var dy = 0f
+
+
+    //private lateinit var rect :Rect
+
+    init {
+        initPaint()
+    }
+
+    private fun initPaint() {
+        textPaint = Paint()
+        textPaint.apply {
+            isAntiAlias = true
+            strokeWidth = 2f
+            textSize = dp2px(20).toFloat()
+            style = Paint.Style.FILL
+            color = resources.getColor(R.color.black_default)
+
+        }
+    }
+
+    override fun onDraw(canvas: Canvas) {
+        super.onDraw(canvas)
+        val content = "90"
+
+        val fontMetrics = textPaint.fontMetrics
+        textHeight = (fontMetrics.bottom - fontMetrics.top) + dp2px(textPadding).toFloat()
+        textWidth = textPaint.measureText(content)
+        (0..9).forEach {
+            val rect = Rect()
+            //  left top right  bottom
+
+            rect.apply {
+                left = 0
+                top = (it * textHeight).toInt()
+                right = mWidth
+                bottom = (it * textHeight).toInt() + textHeight.toInt()
+
+                if(isMove){
+                    top = (it * textHeight).toInt() + dy.toInt()
+                    bottom = (it * textHeight).toInt() + textHeight.toInt() + dy.toInt()
+                }
+            }
+            val baseLine = rect.centerY() + (fontMetrics.bottom - fontMetrics.top) / 2 - fontMetrics.bottom
+            if (it == 1) {
+                unitBaseLine = rect.centerY() + (fontMetrics.bottom - fontMetrics.top) / 2 - fontMetrics.bottom
+            }
+            val x = (mWidth - textWidth) / 2
+            canvas.drawText(content, x, baseLine, textPaint)
+        }
+        Log.d("TAG-->", "$unitBaseLine")
+        canvas.drawText("%", mWidth / 2 + textWidth / 2 + dp2px(textPadding), unitBaseLine, textPaint)
+        canvas.drawLine(0f, textHeight, mWidth.toFloat(), textHeight, textPaint)
+        canvas.drawLine(0f, textHeight * 2, mWidth.toFloat(), textHeight * 2, textPaint)
+    }
+
+    override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec)
+        mWidth = measuredWidth
+        mHeight = measuredHeight
+    }
+
+    private var mTouchY: Float = 0f
+
+    override fun onTouchEvent(event: MotionEvent): Boolean {
+        when (event.action) {
+            MotionEvent.ACTION_DOWN -> {
+                mTouchY = event.y
+                return true
+            }
+            MotionEvent.ACTION_MOVE -> {
+                isMove = true
+                dy = event.y - mTouchY
+                mTouchY = event.y
+
+                invalidate()
+            }
+            MotionEvent.ACTION_UP -> {
+                isMove = false
+            }
+        }
+        return super.onTouchEvent(event)
+    }
+
+}
